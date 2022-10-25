@@ -1,0 +1,2 @@
+^E:\QT PROJECT\GRAYPLAYER\DEBUG\MOC_PREDEFS.H.CBT
+cl -Bx"E:\Qt\5.15.0\msvc2019_64\bin\qmake.exe" -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zi -MDd -W3 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 -wd4577 -wd4467 -E E:\Qt\5.15.0\msvc2019_64\mkspecs\features\data\dummy.cpp 2>NUL >debug\moc_predefs.h

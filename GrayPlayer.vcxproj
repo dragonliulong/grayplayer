@@ -1,0 +1,346 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F2790C2C-C29A-30B2-BA42-3A27B64F9BDD}</ProjectGuid>
+    <RootNamespace>GrayPlayer</RootNamespace>
+    <Keyword>QtVS_v304</Keyword>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformMinVersion>10.0.19041.0</WindowsTargetPlatformMinVersion>
+    <QtMsBuild Condition="'$(QtMsBuild)'=='' or !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <PlatformToolset>v140</PlatformToolset>
+    <OutputDirectory>release\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>Application</ConfigurationType>
+    <IntermediateDirectory>release\</IntermediateDirectory>
+    <PrimaryOutput>GrayPlayer</PrimaryOutput>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <PlatformToolset>v142</PlatformToolset>
+    <OutputDirectory>debug\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>Application</ConfigurationType>
+    <IntermediateDirectory>debug\</IntermediateDirectory>
+    <PrimaryOutput>GrayPlayer</PrimaryOutput>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt_defaults.props')">
+    <Import Project="$(QtMsBuild)\qt_defaults.props" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>debug\</OutDir>
+    <IntDir>debug\</IntDir>
+    <TargetName>GrayPlayer</TargetName>
+    <IgnoreImportLibrary>true</IgnoreImportLibrary>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>release\</OutDir>
+    <IntDir>release\</IntDir>
+    <TargetName>GrayPlayer</TargetName>
+    <IgnoreImportLibrary>true</IgnoreImportLibrary>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <QtInstall>Qt 5.15.0</QtInstall>
+    <QtModules>core;network;gui;multimedia;widgets;qml;quickwidgets;quick</QtModules>
+  </PropertyGroup>
+  <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <QtInstall>Qt 5.15.0</QtInstall>
+    <QtModules>core;network;gui;multimedia;widgets;qml;quickwidgets;quick</QtModules>
+  </PropertyGroup>
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.props')">
+    <Import Project="$(QtMsBuild)\qt.props" />
+  </ImportGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>GeneratedFiles\$(ConfigurationName);GeneratedFiles;.;..\..\ffmpeg\dev\include;..\..\sdl2\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.1\include;release;UI;/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>release\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <DisableSpecificWarnings>4577;4467;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ObjectFileName>release\</ObjectFileName>
+      <Optimization>MaxSpeed</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;NDEBUG;QT_NO_DEBUG;QT_QMLMODELS_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <ProgramDataBaseFileName>
+      </ProgramDataBaseFileName>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>user32.lib;dwmapi.lib;gdi32.lib;E:\ffmpeg\dev\lib\avcodec.lib;E:\ffmpeg\dev\lib\avdevice.lib;E:\ffmpeg\dev\lib\avfilter.lib;E:\ffmpeg\dev\lib\avformat.lib;E:\ffmpeg\dev\lib\avutil.lib;E:\ffmpeg\dev\lib\swresample.lib;E:\ffmpeg\dev\lib\swscale.lib;E:\ffmpeg\dev\lib\postproc.lib;E:\sdl2\lib\x64\SDL2.lib;"E:\Qt Project\GrayPlayer\d3d9.lib";"E:\Qt Project\GrayPlayer\d3d11.lib";"E:\Qt Project\GrayPlayer\dxva2.lib";"E:\Qt Project\GrayPlayer\dxgi.lib";"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.1\lib\x64\cuda.lib";"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.1\lib\x64\cudart.lib";$(QTDIR)\lib\Qt5QmlModels.lib;shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.1\lib\x64;C:\openssl\lib;C:\Utils\my_sql\mysql-5.7.25-winx64\lib;C:\Utils\postgresql\pgsql\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <LinkIncremental>false</LinkIncremental>
+      <OptimizeReferences>true</OptimizeReferences>
+      <OutputFile>$(OutDir)\GrayPlayer.exe</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;NDEBUG;QT_NO_DEBUG;QT_QUICKWIDGETS_LIB;QT_QUICK_LIB;QT_WIDGETS_LIB;QT_MULTIMEDIA_LIB;QT_GUI_LIB;QT_QMLMODELS_LIB;QT_QML_LIB;QT_NETWORK_LIB;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <QtMoc>
+      <CompilerFlavor>msvc</CompilerFlavor>
+      <Include>E:/Qt Project/GrayPlayer/$(Configuration)/moc_predefs.h</Include>
+      <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
+      <DynamicSource>output</DynamicSource>
+      <QtMocDir>$(Configuration)</QtMocDir>
+      <QtMocFileName>moc_%(Filename).cpp</QtMocFileName>
+    </QtMoc>
+    <QtRcc>
+      <Compression>default</Compression>
+      <ExecutionDescription>Rcc'ing %(Identity)...</ExecutionDescription>
+      <QtRccDir>$(Configuration)</QtRccDir>
+      <QtRccFileName>qrc_%(Filename).cpp</QtRccFileName>
+    </QtRcc>
+    <QtUic>
+      <ExecutionDescription>Uic'ing %(Identity)...</ExecutionDescription>
+      <QtUicDir>UI</QtUicDir>
+      <QtUicFileName>ui_%(Filename).h</QtUicFileName>
+    </QtUic>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>GeneratedFiles\$(ConfigurationName);GeneratedFiles;.;..\..\ffmpeg\dev\include;..\..\sdl2\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.1\include;debug;UI;/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>debug\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4577;4467;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ObjectFileName>debug\</ObjectFileName>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QT_QMLMODELS_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>user32.lib;dwmapi.lib;gdi32.lib;E:\ffmpeg\dev\lib\avcodec.lib;E:\ffmpeg\dev\lib\avdevice.lib;E:\ffmpeg\dev\lib\avfilter.lib;E:\ffmpeg\dev\lib\avformat.lib;E:\ffmpeg\dev\lib\avutil.lib;E:\ffmpeg\dev\lib\swresample.lib;E:\ffmpeg\dev\lib\swscale.lib;E:\ffmpeg\dev\lib\postproc.lib;E:\sdl2\lib\x64\SDL2.lib;"E:\Qt Project\GrayPlayer\d3d9.lib";"E:\Qt Project\GrayPlayer\d3d11.lib";"E:\Qt Project\GrayPlayer\dxva2.lib";"E:\Qt Project\GrayPlayer\dxgi.lib";"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.1\lib\x64\cuda.lib";"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.1\lib\x64\cudart.lib";$(QTDIR)\lib\Qt5QmlModelsd.lib;shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.1\lib\x64;C:\openssl\lib;C:\Utils\my_sql\mysql-5.7.25-winx64\lib;C:\Utils\postgresql\pgsql\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <OutputFile>$(OutDir)\GrayPlayer.exe</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QT_QUICKWIDGETS_LIB;QT_QUICK_LIB;QT_WIDGETS_LIB;QT_MULTIMEDIA_LIB;QT_GUI_LIB;QT_QMLMODELS_LIB;QT_QML_LIB;QT_NETWORK_LIB;QT_CORE_LIB;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <QtMoc>
+      <CompilerFlavor>msvc</CompilerFlavor>
+      <Include>E:/Qt Project/GrayPlayer/$(Configuration)/moc_predefs.h</Include>
+      <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
+      <DynamicSource>output</DynamicSource>
+      <QtMocDir>$(Configuration)</QtMocDir>
+      <QtMocFileName>moc_%(Filename).cpp</QtMocFileName>
+    </QtMoc>
+    <QtRcc>
+      <Compression>default</Compression>
+      <ExecutionDescription>Rcc'ing %(Identity)...</ExecutionDescription>
+      <QtRccDir>$(Configuration)</QtRccDir>
+      <QtRccFileName>qrc_%(Filename).cpp</QtRccFileName>
+    </QtRcc>
+    <QtUic>
+      <ExecutionDescription>Uic'ing %(Identity)...</ExecutionDescription>
+      <QtUicDir>UI</QtUicDir>
+      <QtUicFileName>ui_%(Filename).h</QtUicFileName>
+    </QtUic>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Button.cpp" />
+    <ClCompile Include="CoderWidget.cpp" />
+    <ClCompile Include="D3D11VAFilterWidget.cpp" />
+    <ClCompile Include="D3D11VAWidget.cpp" />
+    <ClCompile Include="DXVA2Widget.cpp" />
+    <ClCompile Include="DecodeWidget.cpp" />
+    <ClCompile Include="GrayPlayer.cpp" />
+    <ClCompile Include="GrayPlayerBorder.cpp" />
+    <ClCompile Include="GrayPlayerDecodeSetting.cpp" />
+    <ClCompile Include="GrayPlayerEvent.cpp" />
+    <ClCompile Include="GrayPlayerInit.cpp" />
+    <ClCompile Include="MultimediaAHelper.cpp" />
+    <ClCompile Include="MultimediaEvent.cpp" />
+    <ClCompile Include="MultimediaFilter.cpp" />
+    <ClCompile Include="MultimediaHW.cpp" />
+    <ClCompile Include="MultimediaMain.cpp" />
+    <ClCompile Include="MultimediaResource.cpp" />
+    <ClCompile Include="MultimediaSetting.cpp" />
+    <ClCompile Include="MultimediaTime.cpp" />
+    <ClCompile Include="MultimediaType.cpp" />
+    <ClCompile Include="MultimediaVD3D11.cpp" />
+    <ClCompile Include="MultimediaVD3D9.cpp" />
+    <ClCompile Include="MultimediaVDP.cpp" />
+    <ClCompile Include="SWWidget.cpp" />
+    <ClCompile Include="SettingWidget.cpp" />
+    <ClCompile Include="Slider.cpp" />
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="AboutWidget.h">
+    </QtMoc>
+    <QtMoc Include="Button.h">
+    </QtMoc>
+    <QtMoc Include="CoderWidget.h">
+    </QtMoc>
+    <QtMoc Include="D3D11VAFilterWidget.h">
+    </QtMoc>
+    <QtMoc Include="D3D11VAWidget.h">
+    </QtMoc>
+    <QtMoc Include="DXVA2Widget.h">
+    </QtMoc>
+    <QtMoc Include="DecodeWidget.h">
+    </QtMoc>
+    <QtMoc Include="ExplainWidget.h">
+    </QtMoc>
+    <QtMoc Include="FramelessWidget.h">
+    </QtMoc>
+    <QtMoc Include="GrayPlayer.h">
+    </QtMoc>
+    <QtMoc Include="Logo.h">
+    </QtMoc>
+    <ClInclude Include="MainFrame.h" />
+    <QtMoc Include="MultimediaAHelper.h">
+    </QtMoc>
+    <ClInclude Include="MultimediaEvent.h" />
+    <ClInclude Include="MultimediaFilter.h" />
+    <ClInclude Include="MultimediaHW.h" />
+    <QtMoc Include="MultimediaMain.h">
+    </QtMoc>
+    <ClInclude Include="MultimediaResource.h" />
+    <ClInclude Include="MultimediaSetting.h" />
+    <QtMoc Include="MultimediaTime.h">
+    </QtMoc>
+    <ClInclude Include="MultimediaType.h" />
+    <QtMoc Include="MultimediaVD3D11.h">
+    </QtMoc>
+    <QtMoc Include="MultimediaVD3D9.h">
+    </QtMoc>
+    <QtMoc Include="MultimediaVDP.h">
+    </QtMoc>
+    <QtMoc Include="SWWidget.h">
+    </QtMoc>
+    <QtMoc Include="SettingLabel.h">
+    </QtMoc>
+    <QtMoc Include="SettingWidget.h">
+    </QtMoc>
+    <QtMoc Include="Slider.h">
+    </QtMoc>
+    <QtMoc Include="TimeLabel.h">
+    </QtMoc>
+    <QtMoc Include="VideoArea.h">
+    </QtMoc>
+    <QtMoc Include="Volume.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="debug\moc_predefs.h.cbt">
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\mkspecs\features\data\dummy.cpp;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">cl -Bx"$(QTDIR)\bin\qmake.exe" -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zi -MDd -W3 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 -wd4577 -wd4467 -E $(QTDIR)\mkspecs\features\data\dummy.cpp 2&gt;NUL &gt;debug\moc_predefs.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Generate moc_predefs.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\moc_predefs.h;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="release\moc_predefs.h.cbt">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\mkspecs\features\data\dummy.cpp;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">cl -Bx"$(QTDIR)\bin\qmake.exe" -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -O2 -MD -W3 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 -wd4577 -wd4467 -E $(QTDIR)\mkspecs\features\data\dummy.cpp 2&gt;NUL &gt;release\moc_predefs.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Generate moc_predefs.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_predefs.h;%(Outputs)</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="CoderWidget.ui">
+    </QtUic>
+    <QtUic Include="D3D11VAFilterWidget.ui">
+    </QtUic>
+    <QtUic Include="D3D11VAWidget.ui">
+    </QtUic>
+    <QtUic Include="DXVA2Widget.ui">
+    </QtUic>
+    <QtUic Include="DecodeWidget.ui">
+    </QtUic>
+    <QtUic Include="GrayPlayer.ui">
+    </QtUic>
+    <QtUic Include="SWWidget.ui">
+    </QtUic>
+    <QtUic Include="SettingWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="aboutLogo.jpg" />
+    <None Include="down_arrow.jpg" />
+    <QtRcc Include="images.qrc">
+      <InitFuncName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">images</InitFuncName>
+      <InitFuncName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">images</InitFuncName>
+    </QtRcc>
+    <None Include="logo.ico" />
+    <QtRcc Include="qml.qrc">
+      <InitFuncName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">qml</InitFuncName>
+      <InitFuncName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">qml</InitFuncName>
+    </QtRcc>
+    <None Include="rgbAnimation.qml" />
+    <None Include="settingBackground.jpg" />
+    <None Include="settingTitle.jpg" />
+    <None Include="showWindow.jpg" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
+    <Import Project="$(QtMsBuild)\qt.targets" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets" />
+</Project>

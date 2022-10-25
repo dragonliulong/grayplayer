@@ -1,0 +1,39 @@
+#include "Multimedia.h"
+
+void TimeRecorder::SetTime(double t)
+{
+    base_time=t;
+    time.start();
+}
+
+double TimeRecorder::GetTime()
+{
+    return base_time+(double)time.elapsed()/(double)1000.0;
+}
+
+ImgPainter::ImgPainter(QWidget* parent) : QWidget(parent)
+{
+    if(parent) setGeometry(0,0,parent->width(),parent->height());
+    show();
+}
+
+void ImgPainter::DrawImg(QImage img)
+{
+    this->img=img;
+    update();
+}
+
+void ImgPainter::paintEvent(QPaintEvent*)
+{
+    QPainter painter(this);
+    painter.drawImage(0,0,img);
+}
+
+bool stop=false;
+
+
+void is_stop();
+void is_pause();
+void is_skipping();
+double get_speed();
+double get_total_time();

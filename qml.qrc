@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>rgbAnimation.qml</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/">
+        <file>showWindow.jpg</file>
+        <file>logo.ico</file>
+        <file>settingBackground.jpg</file>
+        <file>settingTitle.jpg</file>
+        <file>aboutLogo.jpg</file>
+        <file>down_arrow.jpg</file>
+    </qresource>
+</RCC>
